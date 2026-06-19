@@ -1,15 +1,14 @@
 """
-UPI Core - Unified Plugin Infrastructure (control plane).
-
-Public usage:
-    import upi_core as upi
-    upi.run("pipeline.yml")
+Public package exports for UPI core.
 """
 
-from .version import __version__, API_LEVEL
+from .version import __version__, API_LEVEL, CORE_VERSION
 
-# Public API facade
-from .api.public import (
+from .api import (
+    CaseSpec,
+    UseSelector,
+    StageSpec,
+    PipelineSpec,
     load_pipeline,
     scan_plugins,
     list_plugins,
@@ -22,6 +21,11 @@ from .api.public import (
 __all__ = [
     "__version__",
     "API_LEVEL",
+    "CORE_VERSION",
+    "CaseSpec",
+    "UseSelector",
+    "StageSpec",
+    "PipelineSpec",
     "load_pipeline",
     "scan_plugins",
     "list_plugins",
